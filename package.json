@@ -1,0 +1,12 @@
+{
+  "name": "bootcamp-redberry",
+  "version": "1.0.0",
+  "description": "RDBR Bootcamp assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Daviti Lobzhanidze",
+  "license": "ISC"
+}

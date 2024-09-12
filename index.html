@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="src/js/controller.js"></script>
+    <title>REDBERRY</title>
+  </head>
+  <body>
+    <header>
+      <img src="/src/img/Logo.svg" alt="Page logo" />
+    </header>
+
+      <nav class="nav">
+        <div class="nav__filter">
+          <div class="nav__filter--item text-icon">
+            <span>რეგიონი</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown icon"></img>
+          </div>
+          <div class="nav__filter--item text-icon"><span>საფასო კატეგორია</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+          <div class="nav__filter--item text-icon"><span>ფართობი</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+          <div class="nav__filter--item text-icon"><span>საძინებლების რაოდენობა</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+        </div>
+        <div class="nav__btn">
+            <div class="nav__btn--item text-icon"><span>ლისტინგის დამატება</span><img src="/src/img/icons/plus-icon-white.svg" alt="add icon"></div>
+            <div class="nav__btn--item text-icon"><span>აგენტის დამატება</span><img src="/src/img/icons/plus-icon-orange.svg" alt="add icon"></div>
+        </div>
+      </nav>
+      <section class="filter__container">
+        <div class="filter__container--item"><span>თბილისი</span><img src="/src/img/icons/x-icon.svg" alt="remove icon"></div>
+        <div class="filter__container--btn"><span>გასუფთავება</span></div>
+      </section>
+      <main>
+        <div class="main__container">
+          <div class="main__container--item">
+           <img alt="Appartment image" src="/src/img/image.png" class="item--img"/>
+           <div class="badge"><span>ქირავდება</span></div>
+           <div class="details">
+            <div class="details__price"><span>80 000 ₾</span></div>
+            <div class="details__price--item text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
+            <div class="details__info">
+             <div class="details__info--item text-icon"><img src="/src/img/icons/icon-bed.svg" alt=""><span>2</span></div>
+             <div class="details__info--item text-icon"><img src="/src/img/icons/icon-size.svg" alt=""><span>55 მ²</span></div>
+             <div class="details__info--item text-icon"><img src="/src/img/icons/icon-postcode.svg" alt=""><span>0160</span></div>
+            </div>
+           </div>
+          </div>
+         </div>
+      </main>
+  </body>
+</html>
