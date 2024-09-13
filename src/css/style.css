@@ -27,20 +27,38 @@ nav {
   display: flex;
   justify-content: space-evenly;
   border: 1px solid #dbdbdb;
-  border-radius: 10px;
-  padding: 10px 20px;
+  border-radius: 7px;
+  padding: 4px 4px;
   gap: 3rem;
 }
-
+.nav__filter--item {
+  border-radius: 7px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.active-filter {
+  background-color: #f3f3f3;
+}
 .nav__btn {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
 .nav__btn--item {
-  border: 1px solid #dbdbdb;
-  padding: 10px 20px;
+  border: 1px solid #f93b1d;
+  padding: 11px 20px;
   border-radius: 10px;
+}
+
+.nav__btn--listing {
+  background-color: #f93b1d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav__btn--agent {
+  color: #f93b1d;
+  cursor: pointer;
 }
 
 .main__container {
