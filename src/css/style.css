@@ -20,7 +20,7 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 4rem 10rem;
+  padding: 4rem 10rem 1rem 10rem;
   align-items: center;
 }
 .nav__filter {
@@ -34,6 +34,7 @@ nav {
 .nav__filter--item {
   border-radius: 7px;
   padding: 7px 12px;
+  font-weight: bold;
   cursor: pointer;
 }
 .active-filter {
@@ -58,6 +59,28 @@ nav {
 
 .nav__btn--agent {
   color: #f93b1d;
+  cursor: pointer;
+}
+
+.filter__container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 10rem;
+}
+
+.filter__container--item {
+  padding: 3px 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 20px;
+}
+.filter__container--item img {
+  cursor: pointer;
+}
+.filter__container--btn {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
 }
 
