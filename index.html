@@ -9,28 +9,88 @@
   </head>
   <body>
     <header>
-      <img src="/src/img/Logo.svg" alt="Page logo" />
+      <img src="/src/img/Logo.svg" alt="Page logo" class="btn"/>
     </header>
       <nav class="nav">
         <div class="nav__filter">
           <div class="nav__filter--item text-icon active-filter">
             <span>რეგიონი</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown icon"></img>
           </div>
-          <div class="nav__filter--item text-icon"><span>საფასო კატეგორია</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
-          <div class="nav__filter--item text-icon"><span>ფართობი</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
-          <div class="nav__filter--item text-icon"><span>საძინებლების რაოდენობა</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+          <div class="nav__filter--item text-icon btn"><span>საფასო კატეგორია</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+          <div class="nav__filter--item text-icon btn"><span>ფართობი</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+          <div class="nav__filter--item text-icon btn"><span>საძინებლების რაოდენობა</span> <img src="/src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
         </div>
         <div class="nav__btn">
-            <div class="nav__btn--item nav__btn--listing text-icon"><img src="/src/img/icons/plus-icon-white.svg" alt="add icon"><span>ლისტინგის დამატება</span></div>
-            <div class="nav__btn--item nav__btn--agent text-icon"><img src="/src/img/icons/plus-icon-orange.svg" alt="add icon"><span>აგენტის დამატება</span></div>
+            <div class="nav__btn--item nav__btn--listing text-icon btn"><img src="/src/img/icons/plus-icon-white.svg" alt="add icon"><span>ლისტინგის დამატება</span></div>
+            <div class="nav__btn--item nav__btn--agent text-icon btn"><img src="/src/img/icons/plus-icon-orange.svg" alt="add icon"><span>აგენტის დამატება</span></div>
+        </div>
+        <div class="nav__filter__regions hidden">
+          <h1>რეგიონის მიხედვით</h1>
+          <div class="nav__filter__regions--container">
+          <div class="nav__filter__regions--col">
+            <label for="regions--checkbox" class="text-icon" class="text-icon">
+              <input type="checkbox" class="regions-checkbox" class="regions-checkbox">
+              <span>ქართლი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>კახეთი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>იმერეთი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>სამეგრელო</span>
+            </label>
+          </div>
+          <div class="nav__filter__regions--col">
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>გურია</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>რაჭა</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>ლეჩხუმი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>სამცხე-ჯავახეთი</span>
+            </label>
+          </div>
+          <div class="nav__filter__regions--col">
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>აჭარა</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>სვანეთი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>მცხეთა-მთიანეთი</span>
+            </label>
+            <label for="regions--checkbox" class="text-icon">
+              <input type="checkbox" class="regions-checkbox">
+              <span>თბილისი</span>
+            </label>
+          </div>
+          </div>
+          <div class="nav__filter__regions--btn btn">არჩევა</div>
         </div>
       </nav>
       <section class="filter__container">
-        <div class="filter__container--item text-icon "><span>თბილისი</span><img src="/src/img/icons/x-icon.svg" alt="remove icon"></div>
-        <div class="filter__container--item text-icon "><span>55 მ² - 90 მ²</span><img src="/src/img/icons/x-icon.svg" alt="remove icon"></div>
-        <div class="filter__container--item text-icon "><span>20000₾ - 100000₾</span><img src="/src/img/icons/x-icon.svg" alt="remove icon"></div>
-        <div class="filter__container--item text-icon "><span>1</span><img src="/src/img/icons/x-icon.svg" alt="remove icon"></div>
-        <div class="filter__container--btn"><span>გასუფთავება</span></div>
+        <div class="filter__container--item text-icon "><span>თბილისი</span><img src="/src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
+        <div class="filter__container--item text-icon "><span>55 მ² - 90 მ²</span><img src="/src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
+        <div class="filter__container--item text-icon "><span>20000₾ - 100000₾</span><img src="/src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
+        <div class="filter__container--item text-icon "><span>1</span><img src="/src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
+        <div class="filter__container--btn btn"><span>გასუფთავება</span></div>
       </section>
       <main>
         <div class="main__container">
@@ -39,7 +99,7 @@
            <div class="badge"><span>ქირავდება</span></div>
            <div class="details">
             <div class="details__price"><span>80 000 ₾</span></div>
-            <div class="details__price--item text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
+            <div class="details__location text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
             <div class="details__info">
              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-bed.svg" alt=""><span>2</span></div>
              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-size.svg" alt=""><span>55 მ²</span></div>
@@ -47,6 +107,45 @@
             </div>
            </div>
           </div>
+          <div class="main__container--item">
+            <img alt="Appartment image" src="/src/img/image.png" class="item--img"/>
+            <div class="badge"><span>ქირავდება</span></div>
+            <div class="details">
+             <div class="details__price"><span>80 000 ₾</span></div>
+             <div class="details__location text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
+             <div class="details__info">
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-bed.svg" alt=""><span>2</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-size.svg" alt=""><span>55 მ²</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-postcode.svg" alt=""><span>0160</span></div>
+             </div>
+            </div>
+           </div>
+           <div class="main__container--item">
+            <img alt="Appartment image" src="/src/img/image.png" class="item--img"/>
+            <div class="badge"><span>ქირავდება</span></div>
+            <div class="details">
+             <div class="details__price"><span>80 000 ₾</span></div>
+             <div class="details__location text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
+             <div class="details__info">
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-bed.svg" alt=""><span>2</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-size.svg" alt=""><span>55 მ²</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-postcode.svg" alt=""><span>0160</span></div>
+             </div>
+            </div>
+           </div>
+           <div class="main__container--item">
+            <img alt="Appartment image" src="/src/img/image.png" class="item--img"/>
+            <div class="badge"><span>ქირავდება</span></div>
+            <div class="details">
+             <div class="details__price"><span>80 000 ₾</span></div>
+             <div class="details__location text-icon"><img src="/src/img/icons/Icon-location.svg" alt=""><span>თბილისი, ქ. ჭავჭავაძის 53</span></div>
+             <div class="details__info">
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-bed.svg" alt=""><span>2</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-size.svg" alt=""><span>55 მ²</span></div>
+              <div class="details__info--item text-icon"><img src="/src/img/icons/icon-postcode.svg" alt=""><span>0160</span></div>
+             </div>
+            </div>
+           </div>
          </div>
       </main>
   </body>
