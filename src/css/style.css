@@ -135,23 +135,13 @@ nav {
 }
 /* ///////////////////////////// */
 .nav__filter__regions {
-  position: absolute;
   top: 220px;
-  z-index: 1;
   max-width: 731px;
-  height: auto;
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 10px;
-  padding: 1.5rem;
-}
-.nav__filter__regions h1 {
-  font-size: 16px;
 }
 .nav__filter__regions--container {
   display: flex;
   gap: 5rem;
-  margin: 1.5rem 0 2rem 0;
+  margin-bottom: 2rem;
 }
 .nav__filter__regions--col {
   display: flex;
@@ -159,19 +149,6 @@ nav {
   gap: 1rem;
   width: 200px;
   font-size: 14px;
-}
-.nav__filter__regions--btn {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-  font-size: 14px;
-  width: 5rem;
-  height: 1rem;
-  padding: 16px 20px 16px 15px;
-  background-color: #f93b1d;
-  border-radius: 10px;
-  color: #fff;
 }
 
 .regions-checkbox {
@@ -202,6 +179,80 @@ nav {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+/* /////////////////// pricefilter ////////////// */
+.nav__filter__prices {
+  top: 220px;
+  left: 305px;
+  max-width: 372px;
+}
+
+.nav__filter__prices--inputs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.nav__filter__prices--inputs input {
+  width: 93%;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid #808a93;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: "FiraGO", sans-serif;
+}
+.nav__filter__prices--inputs i {
+  position: absolute;
+  margin-left: -25px;
+  margin-top: 12px;
+  color: #000000;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.nav__filter__prices--amounts {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32%;
+  margin-bottom: 20px;
+}
+.nav__filter__prices--amounts h2 {
+  font-size: 14px;
+  margin: 5px 0 15px 0;
+  color: #021526;
+}
+.nav__filter__prices--amounts p {
+  font-size: 13px;
+  color: #2d3648;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.nav__filter__prices--amounts i {
+  font-style: normal;
+}
+
+.nav__filter--btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  font-size: 14px;
+  width: 5rem;
+  height: 1rem;
+  padding: 16px 20px 16px 15px;
+  background-color: #f93b1d;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.nav__filter--window {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
 
 /* /////////////////// */
 .text-icon {
@@ -216,4 +267,17 @@ nav {
 .hidden {
   display: none;
 }
+
+.filter-title {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.valid-data {
+  position: absolute;
+  font-size: 13px;
+  color: red;
+  margin-top: 6px;
+}
+
 /* //////////////////// */
