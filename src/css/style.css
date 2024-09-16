@@ -186,12 +186,12 @@ nav {
   max-width: 372px;
 }
 
-.nav__filter__prices--inputs {
+.nav__filter--inputs {
   display: flex;
   margin-bottom: 20px;
 }
 
-.nav__filter__prices--inputs input {
+.nav__filter--inputs input {
   width: 93%;
   height: 42px;
   padding: 10px;
@@ -200,7 +200,7 @@ nav {
   font-size: 14px;
   font-family: "FiraGO", sans-serif;
 }
-.nav__filter__prices--inputs i {
+.nav__filter--inputs i {
   position: absolute;
   margin-left: -25px;
   margin-top: 12px;
@@ -209,24 +209,24 @@ nav {
   font-size: 13px;
 }
 
-.nav__filter__prices--amounts {
+.nav__filter--amounts {
   display: flex;
   justify-content: flex-start;
   gap: 32%;
   margin-bottom: 20px;
 }
-.nav__filter__prices--amounts h2 {
+.nav__filter--amounts h2 {
   font-size: 14px;
   margin: 5px 0 15px 0;
   color: #021526;
 }
-.nav__filter__prices--amounts p {
+.nav__filter--amounts p {
   font-size: 13px;
   color: #2d3648;
   margin-bottom: 10px;
   cursor: pointer;
 }
-.nav__filter__prices--amounts i {
+.nav__filter--amounts i {
   font-style: normal;
 }
 
@@ -252,6 +252,15 @@ nav {
   border: 1px solid #dbdbdb;
   border-radius: 10px;
   padding: 1.5rem;
+  box-shadow: 1px 2px 10px #89898953;
+}
+
+/* ////////////////// */
+.nav__filter__area {
+  top: 220px;
+  left: 532px;
+  max-width: 372px;
+  padding: 1.5rem 1.5rem 1.9rem 1.5rem;
 }
 
 /* /////////////////// */
