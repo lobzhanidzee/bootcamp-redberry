@@ -48,6 +48,9 @@ nav {
   border: 1px solid #f93b1d;
   padding: 13px 20px;
   border-radius: 10px;
+  font-family: "FiraGO", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .nav__btn--listing {
@@ -57,6 +60,7 @@ nav {
 
 .nav__btn--agent {
   color: #f93b1d;
+  background-color: #fff;
 }
 
 .filter__container {
@@ -275,6 +279,81 @@ nav {
   align-items: center;
 }
 
+.add-agent-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1009;
+  background-color: #fff;
+  border-radius: 10px;
+
+  padding: 4rem 6rem 4rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+  z-index: 4;
+  transition: all 0.5s;
+}
+.add-agent-window h2 {
+  text-align: center;
+  margin: 2rem;
+  font-size: 30px;
+}
+.modal--col {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 2rem 0 2rem 0;
+}
+.modal--row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.add-agent-window label {
+  font-weight: bold;
+  margin: 10px 0;
+}
+.modal--row input {
+  border: 1px solid #000000;
+  height: 2.5rem;
+  border-radius: 5px;
+}
+.modal--row p {
+  margin-bottom: 15px;
+}
+.modal-upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #2d3648;
+  border-radius: 4px;
+  height: 7rem;
+  padding: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.modal-upload-btn input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.modal-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 4rem 1rem 0rem 1rem;
+  gap: 1rem;
+  padding: 1rem;
+}
+.modal-btn button {
+  font-weight: bold;
+  font-size: 15px;
+}
+
 /* /////////////////// */
 .text-icon {
   display: flex;
@@ -283,10 +362,13 @@ nav {
 }
 .btn {
   cursor: pointer;
+  font-family: "FiraGO", sans-serif;
 }
 
 .hidden {
   display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .filter-title {
@@ -299,6 +381,18 @@ nav {
   font-size: 13px;
   color: red;
   margin-top: 6px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #02152657;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  transition: all 0.5s;
 }
 
 /* //////////////////// */

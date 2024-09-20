@@ -21,8 +21,42 @@
           <div class="nav__filter--item text-icon btn"><span>საძინებლების რაოდენობა</span> <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
         </div>
         <div class="nav__btn">
-            <div class="nav__btn--item nav__btn--listing text-icon btn"><img src="./src/img/icons/plus-icon-white.svg" alt="add icon"><span>ლისტინგის დამატება</span></div>
-            <div class="nav__btn--item nav__btn--agent text-icon btn"><img src="./src/img/icons/plus-icon-orange.svg" alt="add icon"><span>აგენტის დამატება</span></div>
+            <button class="nav__btn--item nav__btn--listing text-icon btn"><img src="./src/img/icons/plus-icon-white.svg" alt="add icon">ლისტინგის დამატება</button>
+            <div class="overlay hidden"></div>
+            <button class="nav__btn--item nav__btn--agent text-icon btn"><img src="./src/img/icons/plus-icon-orange.svg" alt="add icon">აგენტის დამატება</button>
+            <div class="add-agent-window hidden">
+              <form>
+                <h2>აგენტის დამატება</h2>
+                <div class="modal--row">
+                  <div class="modal--col">
+                    <label for="name">სახელი*</label>
+                    <input value="" required name="name" type="text" id="name"/>
+                    <p class="" >✔ მინიმუმ ორი სიმბოლო</p>
+                    <label for="email">ელ-ფოსტა*</label>
+                    <input value="" required name="email" type="email" id="email"/>
+                    <p class="">✔ გამოიყენეთ @redberry.ge ფოსტა</p>
+                  </div>
+                  <div class="modal--col">
+                    <label for="lastname">გვარი</label>
+                    <input value="" required name="lastname" type="text" id="lastname"/>
+                    <p class="">✔ მინიმუმ ორი სიმბოლო</p>
+
+                    <label for="number">ტელეფონის ნომერი</label>
+                    <input value="" required name="number" type="number" id="number"/>
+                    <p class="">✔ მხოლოდ რიცხვები</p>
+                  </div>
+                </div>
+                <label for="image">ატვირთეთ ფოტო *</label>
+                <div class="modal-upload-btn">
+                  <i><img src="./src/img/icons/plus-icon-circle.svg" alt="upload file icon"></i>
+                  <input type="file" name="image" id="image">
+                </div>
+                  <div class="modal-btn">
+                    <button class="nav__btn--item nav__btn--agent modal-btn-cancel btn" type="button">გაუქმება</button>
+                    <button class="nav__btn--item nav__btn--listing modal-btn-submit btn">დაამატე აგენტი</button>
+                  </div>
+              </form>
+              </div>
         </div>
         <div class="nav__filter__regions nav__filter--window hidden">
           <h1 class="filter-title">რეგიონის მიხედვით</h1>
@@ -172,7 +206,7 @@
       </section>
       <main>
         <div class="main__container">
-          
+
           </div>
       </main>
   </body>
