@@ -1,6 +1,7 @@
 import HomeView from "./views/homeView.js";
 import AgentModalView from "./views/agentModalView.js";
 
-HomeView.GetAppartments();
-
-AgentModalView.modalEvent();
+if (window.location.pathname.endsWith("/")) {
+  HomeView.GetAppartments();
+  AgentModalView.modalEvent();
+}

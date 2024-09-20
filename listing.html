@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/listing.css" />
+    <script type="module" src="./src/js/controller.js"></script>
+    <title>REDBERRY | Add listing</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="./src/img/Logo.svg" alt="Page logo" class="btn" />
+      </a>
+    </header>
+    <main>
+      <h1>ლისტინგის დამატება</h1>
+      <form id="listingForm" action="?">
+        <h2>გარიგების ტიპი</h2>
+        <div class="rental__inputs">
+          <input type="radio" name="isRental" id="isNotRental" />
+          <label for="isNotRental">იყიდება</label>
+          <input type="radio" name="isRental" id="isRental" />
+          <label for="isRental">ქირავდება</label>
+        </div>
+        <h2>მდებარეობა</h2>
+        <div class="address__inputs">
+          <div class="address__inputs--container form-inputs">
+            <div class="address--col inputs--col">
+              <label for="name">მისამართი*</label>
+              <input value="" required name="name" type="text" id="name" />
+              <p class="">✔ მინიმუმ ორი სიმბოლო</p>
+              <label for="region">რეგიონი</label>
+              <select name="region" id="region" required>
+                <option value="კახეთი">კახეთი</option>
+              </select>
+            </div>
+            <div class="address--col inputs--col">
+              <label for="zip-code">საფოსტო ინდექსი</label>
+              <input
+                value=""
+                required
+                name="zip-code"
+                type="number"
+                id="zip-code"
+              />
+              <p class="">✔ მხოლოდ რიცხვები</p>
+              <label for="city">ქალაქი</label>
+              <select name="city" id="city" required>
+                <option value="თელავი">თელავი</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <h2>ბინის დეტალები</h2>
+        <div class="appartment__details">
+          <div class="appartment__details--row form-inputs">
+            <div class="inputs--col">
+              <label for="price">ფასი</label>
+              <input value="" required name="price" type="number" id="price" />
+              <p class="">✔ მხოლოდ რიცხვები</p>
+              <label for="bedrooms">საძინებლების რაოდენობა</label>
+              <input
+                value=""
+                required
+                name="bedrooms"
+                type="number"
+                id="bedrooms"
+              />
+              <p class="">✔ მხოლოდ რიცხვები</p>
+            </div>
+            <div class="inputs--col">
+              <label for="area">ფართობი</label>
+              <input value="" required name="area" type="number" id="area" />
+              <p class="">✔ მხოლოდ რიცხვები</p>
+            </div>
+          </div>
+          <label for="description">აღწერა</label>
+          <textarea name="description" id="description"></textarea>
+          <p class="">✔ მინიმუმ 5 სიტყვა</p>
+          <label for="image">ატვირთეთ ფოტო *</label>
+          <div class="upload-btn">
+            <i
+              ><img
+                src="./src/img/icons/plus-icon-circle.svg"
+                alt="upload file icon"
+            /></i>
+            <input type="file" name="image" id="image" />
+          </div>
+        </div>
+
+        <h2>აგენტი</h2>
+        <div class="agent-details inputs--col">
+          <label for="agent">აირჩიე</label>
+          <select name="agent" id="agent" required>
+            <option value="agent">გიორგი ბრეგვაძე</option>
+          </select>
+        </div>
+        <div class="appartment__details-btn">
+          <button
+            class="nav__btn--item nav__btn--agent appartment__details-btn-cancel btn"
+            type="button"
+          >
+            გაუქმება
+          </button>
+          <button
+            class="nav__btn--item nav__btn--listing appartment__details-btn-submit btn"
+          >
+            დაამატე აგენტი
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
