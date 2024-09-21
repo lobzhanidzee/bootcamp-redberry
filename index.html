@@ -9,209 +9,339 @@
   </head>
   <body>
     <header>
-      <a href="/">
-      <img src="./src/img/Logo.svg" alt="Page logo" class="btn"/>
+      <a href="./">
+        <img src="./src/img/Logo.svg" alt="Page logo" class="btn" />
       </a>
     </header>
-      <nav class="nav">
-        <div class="nav__filter">
-          <div class="nav__filter--item text-icon btn active-filter">
-            <span>რეგიონი</span> <img src="./src/img/icons/arrow-icon.svg" alt="dropdown icon"></img>
-          </div>
-          <div class="nav__filter--item text-icon btn"><span>საფასო კატეგორია</span> <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
-          <div class="nav__filter--item text-icon btn"><span>ფართობი</span> <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
-          <div class="nav__filter--item text-icon btn"><span>საძინებლების რაოდენობა</span> <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow"></img></div>
+    <nav class="nav">
+      <div class="nav__filter">
+        <div class="nav__filter--item region-filter text-icon btn">
+          <span>რეგიონი</span>
+          <img src="./src/img/icons/arrow-icon.svg" alt="dropdown icon" />
         </div>
-        <div class="nav__btn">
-            <button class="nav__btn--item nav__btn--listing text-icon btn" onclick="window.location.href='./listing.html'">
-              <img src="./src/img/icons/plus-icon-white.svg" alt="add icon">ლისტინგის დამატება
-            </button>
-            <div class="overlay hidden"></div>
-            <button class="nav__btn--item nav__btn--agent text-icon btn"><img src="./src/img/icons/plus-icon-orange.svg" alt="add icon">აგენტის დამატება</button>
-            <div class="add-agent-window hidden">
-              <form>
-                <h2>აგენტის დამატება</h2>
-                <div class="modal--row">
-                  <div class="modal--col">
-                    <label for="name">სახელი*</label>
-                    <input value="" required name="name" type="text" id="name"/>
-                    <p class="" >✔ მინიმუმ ორი სიმბოლო</p>
-                    <label for="email">ელ-ფოსტა*</label>
-                    <input value="" required name="email" type="email" id="email"/>
-                    <p class="">✔ გამოიყენეთ @redberry.ge ფოსტა</p>
-                  </div>
-                  <div class="modal--col">
-                    <label for="lastname">გვარი</label>
-                    <input value="" required name="lastname" type="text" id="lastname"/>
-                    <p class="">✔ მინიმუმ ორი სიმბოლო</p>
-
-                    <label for="number">ტელეფონის ნომერი</label>
-                    <input value="" required name="number" type="number" id="number"/>
-                    <p class="">✔ მხოლოდ რიცხვები</p>
-                  </div>
-                </div>
-                <label for="image">ატვირთეთ ფოტო *</label>
-                <div class="modal-upload-btn">
-                  <i><img src="./src/img/icons/plus-icon-circle.svg" alt="upload file icon"></i>
-                  <input type="file" name="image" id="image">
-                </div>
-                  <div class="modal-btn">
-                    <button class="nav__btn--item nav__btn--agent modal-btn-cancel btn" type="button">გაუქმება</button>
-                    <button class="nav__btn--item nav__btn--listing modal-btn-submit btn">დაამატე აგენტი</button>
-                  </div>
-              </form>
+        <div class="nav__filter--item text-icon btn">
+          <span>საფასო კატეგორია</span>
+          <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
+        </div>
+        <div class="nav__filter--item text-icon btn">
+          <span>ფართობი</span>
+          <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
+        </div>
+        <div class="nav__filter--item text-icon btn">
+          <span>საძინებლების რაოდენობა</span>
+          <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
+        </div>
+      </div>
+      <div class="nav__btn">
+        <button
+          class="nav__btn--item nav__btn--listing text-icon btn"
+          onclick="window.location.href='./listing.html'"
+        >
+          <img
+            src="./src/img/icons/plus-icon-white.svg"
+            alt="add icon"
+          />ლისტინგის დამატება
+        </button>
+        <div class="overlay hidden"></div>
+        <button class="nav__btn--item nav__btn--agent text-icon btn">
+          <img
+            src="./src/img/icons/plus-icon-orange.svg"
+            alt="add icon"
+          />აგენტის დამატება
+        </button>
+        <div class="add-agent-window hidden">
+          <form
+            id="addAgentForm"
+            action="https://api.real-estate-manager.redberryinternship.ge/api/agents"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <h2>აგენტის დამატება</h2>
+            <div class="modal--row">
+              <div class="modal--col">
+                <label for="name">სახელი*</label>
+                <input value="" required name="name" type="text" id="name" />
+                <p>✔ მინიმუმ ორი სიმბოლო</p>
+                <label for="email">ელ-ფოსტა*</label>
+                <input value="" required name="email" type="email" id="email" />
+                <p>✔ გამოიყენეთ @redberry.ge ფოსტა</p>
               </div>
+              <div class="modal--col">
+                <label for="surname">გვარი*</label>
+                <input
+                  value=""
+                  required
+                  name="surname"
+                  type="text"
+                  id="surname"
+                />
+                <p>✔ მინიმუმ ორი სიმბოლო</p>
+                <label for="phone">ტელეფონის ნომერი*</label>
+                <input
+                  value=""
+                  required
+                  name="phone"
+                  type="number"
+                  id="phone"
+                />
+                <p>✔ მხოლოდ რიცხვები</p>
+              </div>
+            </div>
+            <label for="avatar">ატვირთეთ ფოტო *</label>
+            <div class="modal-upload-btn">
+              <i
+                ><img
+                  src="./src/img/icons/plus-icon-circle.svg"
+                  alt="upload file icon"
+              /></i>
+              <input type="file" name="avatar" id="avatar" />
+            </div>
+            <div class="modal-btn">
+              <button
+                class="nav__btn--item nav__btn--agent modal-btn-cancel btn"
+                type="button"
+              >
+                გაუქმება
+              </button>
+              <button
+                class="nav__btn--item nav__btn--listing modal-btn-submit btn"
+                type="submit"
+              >
+                დაამატე აგენტი
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="nav__filter__regions nav__filter--window hidden">
-          <h1 class="filter-title">რეგიონის მიხედვით</h1>
+      </div>
+      <div class="nav__filter__regions nav__filter--window hidden">
+        <h1 class="filter-title">რეგიონის მიხედვით</h1>
+        <form action="filter">
           <div class="nav__filter__regions--container">
-          <div class="nav__filter__regions--col">
-            <label for="regions--checkbox" class="text-icon" class="text-icon">
-              <input type="checkbox" class="regions-checkbox" class="regions-checkbox">
-              <span>ქართლი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>კახეთი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>იმერეთი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>სამეგრელო</span>
-            </label>
-          </div>
-          <div class="nav__filter__regions--col">
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>გურია</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>რაჭა</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>ლეჩხუმი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>სამცხე-ჯავახეთი</span>
-            </label>
-          </div>
-          <div class="nav__filter__regions--col">
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>აჭარა</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>სვანეთი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>მცხეთა-მთიანეთი</span>
-            </label>
-            <label for="regions--checkbox" class="text-icon">
-              <input type="checkbox" class="regions-checkbox">
-              <span>თბილისი</span>
-            </label>
-          </div>
-          </div>
-          <div class="nav__filter__regions--btn nav__filter--btn btn">არჩევა</div>
-        </div>
-        <div class="nav__filter__prices nav__filter--window hidden">
-          <h1 class="filter-title">ფასის მიხედვით</h1>
-          <div class="nav__filter--inputs">
-            <div>
-                <input type="text" placeholder="დან">
-                <i>₾</i>
-                <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
+            <div class="nav__filter__regions--col">
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-qartli"
+                  class="regions-checkbox"
+                  id="region-qartli"
+                />
+                <label for="region-qartli">ქართლი</label>
               </div>
-              <div>
-                <input type="text" placeholder="მდე">
-                <i>₾</i>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-kaxeti"
+                  class="regions-checkbox"
+                  id="region-kaxeti"
+                />
+                <label for="region-kaxeti" class="text-icon">კახეთი</label>
               </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-imereti"
+                  class="regions-checkbox"
+                  id="region-imereti"
+                />
+                <label for="region-imereti" class="text-icon">იმერეთი</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-samegrelo"
+                  class="regions-checkbox"
+                  id="region-samegrelo"
+                />
+                <label for="region-samegrelo" class="text-icon"
+                  >სამეგრელო</label
+                >
+              </div>
+            </div>
+            <div class="nav__filter__regions--col">
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-guria"
+                  class="regions-checkbox"
+                  id="region-guria"
+                />
+                <label for="region-guria" class="text-icon">გურია</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-racha"
+                  class="regions-checkbox"
+                  id="region-racha"
+                />
+                <label for="region-racha" class="text-icon">რაჭა</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-lechxumi"
+                  class="regions-checkbox"
+                  id="region-lechxumi"
+                />
+                <label for="region-lechxumi" class="text-icon">ლეჩხუმი</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-samcxe-javaxeti"
+                  class="regions-checkbox"
+                  id="region-samcxe-javaxeti"
+                />
+                <label for="region-samcxe-javaxeti" class="text-icon"
+                  >სამცხე-ჯავახეთი</label
+                >
+              </div>
+            </div>
+            <div class="nav__filter__regions--col">
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-ajara"
+                  class="regions-checkbox"
+                  id="region-ajara"
+                />
+                <label for="region-ajara" class="text-icon">აჭარა</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="region-svaneti"
+                  class="regions-checkbox"
+                  id="region-svaneti"
+                />
+                <label for="region-svaneti" class="text-icon">სვანეთი</label>
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="mcxeta-mtianeti"
+                  class="regions-checkbox"
+                  id="mcxeta-mtianeti"
+                />
+                <label for="mcxeta-mtianeti" class="text-icon"
+                  >მცხეთა-მთიანეთი</label
+                >
+              </div>
+              <div class="text-icon">
+                <input
+                  type="checkbox"
+                  name="tbilisi"
+                  class="regions-checkbox"
+                  id="tbilisi"
+                />
+                <label for="tbilisi" class="text-icon">თბილისი</label>
+              </div>
+            </div>
           </div>
-          <div class="nav__filter--amounts">
-            <div>
-              <h2>მინ. ფასი</h2>
-              <p>50,000 <i>₾</i></p>
-              <p>100,000 <i>₾</i></p>
-              <p>150,000 <i>₾</i></p>
-              <p>200,000 <i>₾</i></p>
-              <p>300,000 <i>₾</i></p>
+          <button class="nav__filter__regions--btn nav__filter--btn btn">
+            არჩევა
+          </button>
+        </form>
+      </div>
+      <div class="nav__filter__prices nav__filter--window hidden">
+        <h1 class="filter-title">ფასის მიხედვით</h1>
+        <div class="nav__filter--inputs">
+          <div>
+            <input type="text" placeholder="დან" />
+            <i>₾</i>
+            <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
           </div>
           <div>
-              <h2>მაქს. ფასი</h2>
-              <p>50,000 <i>₾</i></p>
-              <p>100,000 <i>₾</i></p>
-              <p>150,000 <i>₾</i></p>
-              <p>200,000 <i>₾</i></p>
-              <p>300,000 <i>₾</i></p>
+            <input type="text" placeholder="მდე" />
+            <i>₾</i>
           </div>
-          </div>
-          <div class="nav__filter__prices--btn nav__filter--btn btn">არჩევა</div>
         </div>
-        <div class="nav__filter__area nav__filter--window hidden">
-          <h1 class="filter-title">ფართობის მიხედვით</h1>
-          <div class="nav__filter--inputs">
-            <div>
-                <input type="text" placeholder="დან">
-                <i>მ²</i>
-                <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
-              </div>
-              <div>
-                <input type="text" placeholder="მდე">
-                <i>მ²</i>
-              </div>
-          </div>
-          <div class="nav__filter--amounts">
-            <div>
-              <h2>მინ. მ²</h2>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
+        <div class="nav__filter--amounts">
+          <div>
+            <h2>მინ. ფასი</h2>
+            <p>50,000 <i>₾</i></p>
+            <p>100,000 <i>₾</i></p>
+            <p>150,000 <i>₾</i></p>
+            <p>200,000 <i>₾</i></p>
+            <p>300,000 <i>₾</i></p>
           </div>
           <div>
-              <h2>მაქს. მ²</h2>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
-              <p>50,000 <i>მ²</i></p>
+            <h2>მაქს. ფასი</h2>
+            <p>50,000 <i>₾</i></p>
+            <p>100,000 <i>₾</i></p>
+            <p>150,000 <i>₾</i></p>
+            <p>200,000 <i>₾</i></p>
+            <p>300,000 <i>₾</i></p>
           </div>
-          </div>
-          <div class="nav__filter__area--btn nav__filter--btn btn">არჩევა</div>
         </div>
-        <div class="nav__filter__searches nav__filter--window hidden">
-          <h1 class="filter-title">საძინებლების რაოდენობა</h1>
-          <div class="nav__filter--inputs nav__filter__searches--input">
-            <div>
-                <input type="text" placeholder="2">
-                <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
-              </div>
+        <div class="nav__filter__prices--btn nav__filter--btn btn">არჩევა</div>
+      </div>
+      <div class="nav__filter__area nav__filter--window hidden">
+        <h1 class="filter-title">ფართობის მიხედვით</h1>
+        <div class="nav__filter--inputs">
+          <div>
+            <input type="text" placeholder="დან" />
+            <i>მ²</i>
+            <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
           </div>
-          <div class="nav__filter--amounts">
+          <div>
+            <input type="text" placeholder="მდე" />
+            <i>მ²</i>
           </div>
-          <div class="nav__filter__area--btn nav__filter--btn btn">არჩევა</div>
         </div>
-      </nav>
-      <section class="filter__container">
-        <div class="filter__container--item text-icon "><span>თბილისი</span><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
-        <div class="filter__container--item text-icon "><span>55 მ² - 90 მ²</span><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
-        <div class="filter__container--item text-icon "><span>20000₾ - 100000₾</span><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
-        <div class="filter__container--item text-icon "><span>1</span><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn"></div>
-        <div class="filter__container--btn btn"><span>გასუფთავება</span></div>
-      </section>
-      <main>
-        <div class="main__container">
-
+        <div class="nav__filter--amounts">
+          <div>
+            <h2>მინ. მ²</h2>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
           </div>
-      </main>
+          <div>
+            <h2>მაქს. მ²</h2>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+            <p>50,000 <i>მ²</i></p>
+          </div>
+        </div>
+        <div class="nav__filter__area--btn nav__filter--btn btn">არჩევა</div>
+      </div>
+      <div class="nav__filter__searches nav__filter--window hidden">
+        <h1 class="filter-title">საძინებლების რაოდენობა</h1>
+        <div class="nav__filter--inputs nav__filter__searches--input">
+          <div>
+            <input type="text" placeholder="2" />
+            <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>
+          </div>
+        </div>
+        <div class="nav__filter--amounts"></div>
+        <div class="nav__filter__area--btn nav__filter--btn btn">არჩევა</div>
+      </div>
+    </nav>
+    <section class="filter__container">
+      <div class="filter__container--item text-icon">
+        <span>თბილისი</span
+        ><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn" />
+      </div>
+      <div class="filter__container--item text-icon">
+        <span>55 მ² - 90 მ²</span
+        ><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn" />
+      </div>
+      <div class="filter__container--item text-icon">
+        <span>20000₾ - 100000₾</span
+        ><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn" />
+      </div>
+      <div class="filter__container--item text-icon">
+        <span>1</span
+        ><img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn" />
+      </div>
+      <div class="filter__container--btn btn"><span>გასუფთავება</span></div>
+    </section>
+    <main>
+      <div class="main__container"></div>
+    </main>
   </body>
 </html>

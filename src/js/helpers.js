@@ -34,3 +34,37 @@ export const AJAX = async function (
     throw err;
   }
 };
+
+export const POST = () => {
+  const addAgentForm = document.getElementById("addAgentForm");
+  let postData = new FormData();
+
+  addAgentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(addAgentForm);
+    const data = Object.fromEntries(formData);
+
+    fetch("https://api.real-estate-manager.redberryinternship.ge/api/agents", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          const text = response.text();
+          throw new Error(text);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        AgentModalView.modalEvent();
+      })
+      .catch((error) => {
+        console.error("Error:", error.message);
+      });
+  });
+};
