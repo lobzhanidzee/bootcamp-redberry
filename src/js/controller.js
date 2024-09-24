@@ -10,4 +10,4 @@ if (window.location.pathname.endsWith("/")) {
 POST();
 
 FiltersView.activeFilter();
-FiltersView.regionActiveFilter();
+// FiltersView.regionActiveFilter();

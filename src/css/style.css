@@ -258,7 +258,9 @@ nav {
   padding: 1.5rem;
   box-shadow: 1px 2px 10px #89898953;
 }
-
+.active-filter-arrow {
+  transform: rotate(180deg);
+}
 /* ////////////////// */
 .nav__filter__area {
   top: 220px;
