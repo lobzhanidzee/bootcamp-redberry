@@ -19,15 +19,15 @@
           <span>რეგიონი</span>
           <img src="./src/img/icons/arrow-icon.svg" alt="dropdown icon" />
         </div>
-        <div class="nav__filter--item text-icon btn">
+        <div class="nav__filter--item price-filter text-icon btn">
           <span>საფასო კატეგორია</span>
           <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
         </div>
-        <div class="nav__filter--item text-icon btn">
+        <div class="nav__filter--item area-filter text-icon btn">
           <span>ფართობი</span>
           <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
         </div>
-        <div class="nav__filter--item text-icon btn">
+        <div class="nav__filter--item bedrooms-filter text-icon btn">
           <span>საძინებლების რაოდენობა</span>
           <img src="./src/img/icons/arrow-icon.svg" alt="dropdown arrow" />
         </div>
@@ -68,22 +68,10 @@
               </div>
               <div class="modal--col">
                 <label for="surname">გვარი*</label>
-                <input
-                  value=""
-                  required
-                  name="surname"
-                  type="text"
-                  id="surname"
-                />
+                <input required name="surname" type="text" id="surname" />
                 <p>✔ მინიმუმ ორი სიმბოლო</p>
                 <label for="phone">ტელეფონის ნომერი*</label>
-                <input
-                  value=""
-                  required
-                  name="phone"
-                  type="number"
-                  id="phone"
-                />
+                <input required name="phone" type="number" id="phone" />
                 <p>✔ მხოლოდ რიცხვები</p>
               </div>
             </div>
@@ -121,36 +109,40 @@
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-qartli"
+                  name="region"
                   class="regions-checkbox"
                   id="region-qartli"
+                  value="12"
                 />
                 <label for="region-qartli">ქართლი</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-kaxeti"
+                  name="region"
                   class="regions-checkbox"
                   id="region-kaxeti"
+                  value="6"
                 />
                 <label for="region-kaxeti" class="text-icon">კახეთი</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-imereti"
+                  name="region"
                   class="regions-checkbox"
                   id="region-imereti"
+                  value="5"
                 />
                 <label for="region-imereti" class="text-icon">იმერეთი</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-samegrelo"
+                  name="region"
                   class="regions-checkbox"
                   id="region-samegrelo"
+                  value="9"
                 />
                 <label for="region-samegrelo" class="text-icon"
                   >სამეგრელო</label
@@ -161,36 +153,40 @@
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-guria"
+                  name="region"
                   class="regions-checkbox"
                   id="region-guria"
+                  value="3"
                 />
                 <label for="region-guria" class="text-icon">გურია</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-racha"
+                  name="region"
                   class="regions-checkbox"
                   id="region-racha"
+                  value="8"
                 />
                 <label for="region-racha" class="text-icon">რაჭა</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-lechxumi"
+                  name="region"
                   class="regions-checkbox"
                   id="region-lechxumi"
+                  value="11"
                 />
                 <label for="region-lechxumi" class="text-icon">ლეჩხუმი</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-samcxe-javaxeti"
+                  name="region"
                   class="regions-checkbox"
                   id="region-samcxe-javaxeti"
+                  value="10"
                 />
                 <label for="region-samcxe-javaxeti" class="text-icon"
                   >სამცხე-ჯავახეთი</label
@@ -201,27 +197,30 @@
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-ajara"
+                  name="region"
                   class="regions-checkbox"
                   id="region-ajara"
+                  value="2"
                 />
                 <label for="region-ajara" class="text-icon">აჭარა</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="region-svaneti"
+                  name="region"
                   class="regions-checkbox"
                   id="region-svaneti"
+                  value="1"
                 />
                 <label for="region-svaneti" class="text-icon">სვანეთი</label>
               </div>
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="mcxeta-mtianeti"
+                  name="region"
                   class="regions-checkbox"
                   id="mcxeta-mtianeti"
+                  value="7"
                 />
                 <label for="mcxeta-mtianeti" class="text-icon"
                   >მცხეთა-მთიანეთი</label
@@ -230,9 +229,10 @@
               <div class="text-icon">
                 <input
                   type="checkbox"
-                  name="tbilisi"
+                  name="region"
                   class="regions-checkbox"
                   id="tbilisi"
+                  value="4"
                 />
                 <label for="tbilisi" class="text-icon">თბილისი</label>
               </div>
@@ -274,7 +274,9 @@
             <p>300,000 <i>₾</i></p>
           </div>
         </div>
-        <div class="nav__filter__prices--btn nav__filter--btn btn">არჩევა</div>
+        <button class="nav__filter__prices--btn nav__filter--btn btn">
+          არჩევა
+        </button>
       </div>
       <div class="nav__filter__area nav__filter--window hidden">
         <h1 class="filter-title">ფართობის მიხედვით</h1>

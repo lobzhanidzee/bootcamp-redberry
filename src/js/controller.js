@@ -7,7 +7,6 @@ if (window.location.pathname.endsWith("/")) {
   HomeView.GetAppartments();
   AgentModalView.modalEvent();
 }
-POST();
+// POST();
 
-FiltersView.activeFilter();
-// FiltersView.regionActiveFilter();
+FiltersView();

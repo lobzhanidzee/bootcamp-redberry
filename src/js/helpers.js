@@ -48,6 +48,7 @@ export const POST = () => {
     fetch("https://api.real-estate-manager.redberryinternship.ge/api/agents", {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${TOKEN}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
