@@ -103,7 +103,8 @@
       </div>
       <div class="nav__filter__regions nav__filter--window hidden">
         <h1 class="filter-title">რეგიონის მიხედვით</h1>
-        <form action="filter">
+        <form action="">
+          <form action="javascript:void(0);" onsubmit="fetchRegions()"></form>
           <div class="nav__filter__regions--container">
             <div class="nav__filter__regions--col">
               <div class="text-icon">
@@ -311,9 +312,9 @@
         </div>
         <div class="nav__filter__area--btn nav__filter--btn btn">არჩევა</div>
       </div>
-      <div class="nav__filter__searches nav__filter--window hidden">
+      <div class="nav__filter__bedrooms nav__filter--window hidden">
         <h1 class="filter-title">საძინებლების რაოდენობა</h1>
-        <div class="nav__filter--inputs nav__filter__searches--input">
+        <div class="nav__filter--inputs nav__filter__bedrooms--input">
           <div>
             <input type="text" placeholder="2" />
             <p class="valid-data hidden">ჩაწერეთ ვალიდური მონაცემები</p>

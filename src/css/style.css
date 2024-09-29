@@ -269,14 +269,14 @@ nav {
   padding: 1.5rem 1.5rem 1.9rem 1.5rem;
 }
 /* /////////////////// */
-.nav__filter__searches {
+.nav__filter__bedrooms {
   top: 220px;
   left: 681px;
 }
-.nav__filter__searches--input {
+.nav__filter__bedrooms--input {
   width: 43px;
 }
-.nav__filter__searches--input input {
+.nav__filter__bedrooms--input input {
   text-align: center;
   align-items: center;
 }

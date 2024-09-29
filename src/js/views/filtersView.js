@@ -9,11 +9,14 @@ class FiltersView {
   _regionFilterWindow = document.querySelector(".nav__filter__regions");
   _pricesFilterWindow = document.querySelector(".nav__filter__prices");
   _areaFilterWindow = document.querySelector(".nav__filter__area");
-  _searchesFilterWindow = document.querySelector(".nav__filter__searches");
+  _bedroomsFilterWindow = document.querySelector(".nav__filter__bedrooms");
 
-  constructor() {
+  render() {
     this.activeFilter();
-    this.regionActiveFilter();
+    this.setupFilter(this._regionBtn, this._regionFilterWindow);
+    this.setupFilter(this._priceBtn, this._pricesFilterWindow);
+    this.setupFilter(this._areaBtn, this._areaFilterWindow);
+    this.setupFilter(this._bedroomsBtn, this._bedroomsFilterWindow);
   }
 
   activeFilter() {
@@ -24,48 +27,36 @@ class FiltersView {
           el.querySelector("img").classList.remove("active-filter-arrow");
         });
         const filterBtn = e.target.closest("div");
-        filterBtn.querySelector("img").classList.toggle("active-filter-arrow");
-        filterBtn.classList.toggle("active-filter");
-
-        if (filterBtn.classList.contains("region-filter")) {
-          this.regionActiveFilter();
-        }
-        if (filterBtn.classList.contains("price-filter")) {
-          this.priceActiveFilter();
+        if (filterBtn) {
+          filterBtn
+            .querySelector("img")
+            .classList.toggle("active-filter-arrow");
+          filterBtn.classList.toggle("active-filter");
         }
         return;
       });
     });
   }
 
-  regionActiveFilter() {
-    this._regionBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      this._regionFilterWindow.classList.toggle("hidden");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        !this._regionBtn.contains(e.target) &&
-        !this._regionFilterWindow.contains(e.target)
-      ) {
-        this._regionFilterWindow.classList.add("hidden");
-      }
-    });
+  hideAllFilterWindows() {
+    this._regionFilterWindow.classList.add("hidden");
+    this._pricesFilterWindow.classList.add("hidden");
+    this._areaFilterWindow.classList.add("hidden");
+    this._bedroomsFilterWindow.classList.add("hidden");
   }
 
-  priceActiveFilter() {
-    this._priceBtn.addEventListener("click", (e) => {
+  setupFilter(button, window) {
+    button.addEventListener("click", (e) => {
       e.stopPropagation();
-      this._pricesFilterWindow.classList.toggle("hidden");
+      this.hideAllFilterWindows();
+      window.classList.toggle("hidden");
     });
 
     document.addEventListener("click", (e) => {
-      if (
-        !this._priceBtn.contains(e.target) &&
-        !this._pricesFilterWindow.contains(e.target)
-      ) {
-        this._pricesFilterWindow.classList.add("hidden");
+      if (!button.contains(e.target) && !window.contains(e.target)) {
+        window.classList.add("hidden");
+        button.classList.remove("active-filter");
+        button.querySelector("img").classList.remove("active-filter-arrow");
       }
     });
   }
