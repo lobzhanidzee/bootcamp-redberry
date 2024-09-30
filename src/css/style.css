@@ -244,6 +244,7 @@ nav {
   height: 1rem;
   padding: 16px 20px 16px 15px;
   background-color: #f93b1d;
+  border: 1px solid #f93b1d;
   border-radius: 10px;
   color: #fff;
 }
