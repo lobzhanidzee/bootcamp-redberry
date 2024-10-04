@@ -33,7 +33,7 @@ class HomeView {
         </div>
       `;
     }
-
+    this._parentEl.innerHTML = "";
     this._parentEl.insertAdjacentHTML("afterbegin", html);
   }
 }
