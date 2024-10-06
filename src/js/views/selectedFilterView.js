@@ -1,4 +1,4 @@
-import { getRegionNameById } from "../controller.js";
+import { getRegionNameById } from "../model.js";
 
 class SelectedFiltersView {
   _regionFilterForm = document.querySelector(".region-filter-form");
@@ -49,7 +49,7 @@ class SelectedFiltersView {
         });
 
       parentEl.insertAdjacentHTML("afterbegin", html);
-
+      this._removeFilter();
       if (!html) {
         this._cleanBtn.classList.add("hidden");
       }
@@ -63,8 +63,21 @@ class SelectedFiltersView {
         child.remove();
       }
     });
-    this._regionFilterForm.reset(); // Reset the form selections
+    this._regionFilterForm.reset();
     this._cleanBtn.classList.add("hidden");
+  }
+
+  _removeFilter() {
+    const filterBoxes = document.querySelectorAll(".filter__container--item");
+
+    filterBoxes.forEach((filterBox) => {
+      filterBox.querySelectorAll("img").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          filterBox.remove();
+        });
+      });
+    });
   }
 }
 

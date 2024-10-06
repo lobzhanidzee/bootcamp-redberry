@@ -11,18 +11,3 @@ if (window.location.pathname.endsWith("/")) {
 
 FiltersView.render();
 selectedFilterView.getSelectFilters();
-
-const regions = await AJAX(
-  "https://api.real-estate-manager.redberryinternship.ge/api/regions"
-);
-
-export function getRegionNameById(id) {
-  const region = regions.find((region) => region.id === id);
-  return region ? region.name : null;
-}
-
-// Example usage
-const regionName = getRegionNameById(1);
-console.log(regionName);
-
-console.log(regions);
