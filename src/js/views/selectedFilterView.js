@@ -2,6 +2,9 @@ import { getRegionNameById } from "../model.js";
 
 class SelectedFiltersView {
   _regionFilterForm = document.querySelector(".region-filter-form");
+  _priceFilterForm = document.querySelector(".nav__filter__prices");
+  _areaFilterForm = document.querySelector(".area__filter--form");
+  _bedroomsFilterForm = document.querySelector(".bedrooms__filter--form");
   _cleanBtn = document.querySelector(".filter__container--btn");
 
   constructor() {
