@@ -1,8 +1,9 @@
 import { getRegionNameById } from "../model.js";
 
 class SelectedFiltersView {
+  _parentEl = document.querySelector(".filter__container");
   _regionFilterForm = document.querySelector(".region-filter-form");
-  _priceFilterForm = document.querySelector(".nav__filter__prices");
+  _priceFilterForm = document.querySelector(".price-filter-form");
   _areaFilterForm = document.querySelector(".area__filter--form");
   _bedroomsFilterForm = document.querySelector(".bedrooms__filter--form");
   _cleanBtn = document.querySelector(".filter__container--btn");
@@ -12,9 +13,41 @@ class SelectedFiltersView {
   }
 
   getSelectFilters() {
+    // ------------------
+    if (this._priceFilterForm) {
+      this._priceFilterForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const storedInputs = [];
+        const formData = new FormData(this._priceFilterForm);
+
+        for (const [key, value] of formData.entries()) {
+          storedInputs.push({ key, value });
+        }
+
+        let html = "";
+        storedInputs
+          .filter(
+            (input) =>
+              input.key === "maxPrice" && input.value > formData.get("minPrice")
+          )
+          .forEach((input) => {
+            html += `
+            <div class="filter__container--item text-icon">
+                  <span>${+formData.get("minPrice")}₾ - ${+input.value}₾</span>
+                  <img src="./src/img/icons/x-icon.svg" alt="remove icon" class="btn" />
+              </div>`;
+            this._cleanBtn.classList.remove("hidden");
+          });
+
+        this._parentEl.insertAdjacentHTML("afterbegin", html);
+        console.log(html);
+        console.log(storedInputs);
+      });
+    }
+    // ------------------
+
     this._regionFilterForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const parentEl = document.querySelector(".filter__container");
       const storedInputs = [];
       const formData = new FormData(this._regionFilterForm);
 
@@ -24,7 +57,7 @@ class SelectedFiltersView {
 
       const existingValues = new Set(
         Array.from(
-          parentEl.querySelectorAll(".filter__container--item span")
+          this._parentEl.querySelectorAll(".filter__container--item span")
         ).map((span) => span.textContent)
       );
 
@@ -32,12 +65,14 @@ class SelectedFiltersView {
         storedInputs.map((input) => getRegionNameById(+input.value))
       );
 
-      parentEl.querySelectorAll(".filter__container--item").forEach((item) => {
-        const spanText = item.querySelector("span").textContent;
-        if (!newValues.has(spanText)) {
-          item.remove();
-        }
-      });
+      this._parentEl
+        .querySelectorAll(".filter__container--item")
+        .forEach((item) => {
+          const spanText = item.querySelector("span").textContent;
+          if (!newValues.has(spanText)) {
+            item.remove();
+          }
+        });
 
       let html = "";
       storedInputs
@@ -51,7 +86,7 @@ class SelectedFiltersView {
           this._cleanBtn.classList.remove("hidden");
         });
 
-      parentEl.insertAdjacentHTML("afterbegin", html);
+      this._parentEl.insertAdjacentHTML("afterbegin", html);
       this._removeFilter();
       if (!html) {
         this._cleanBtn.classList.add("hidden");
@@ -60,8 +95,8 @@ class SelectedFiltersView {
   }
 
   _clearFilters() {
-    const parentEl = document.querySelector(".filter__container");
-    Array.from(parentEl.children).forEach((child) => {
+    this._parentEl = document.querySelector(".filter__container");
+    Array.from(this._parentEl.children).forEach((child) => {
       if (!child.classList.contains("filter__container--btn")) {
         child.remove();
       }
