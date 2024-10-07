@@ -10,43 +10,43 @@ if (window.location.pathname.endsWith("/")) {
 }
 
 FiltersView.render();
-selectedFilterView._setupFormListeners();
+selectedFilterView.getSelectFilters();
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const minPriceInput = document.getElementById("minPriceInput");
-//   const maxPriceInput = document.getElementById("maxPriceInput");
-//   const priceDisplay = document.querySelector(".nav__filter__prices");
-//   const priceOptions = document.querySelectorAll(".price-option");
-//   const form = document.querySelector(".price-form");
+document.addEventListener("DOMContentLoaded", () => {
+  const minPriceInput = document.getElementById("minPriceInput");
+  const maxPriceInput = document.getElementById("maxPriceInput");
+  const priceDisplay = document.querySelector(".nav__filter__prices");
+  const priceOptions = document.querySelectorAll(".price-option");
+  const form = document.querySelector(".price-form");
 
-//   function createPriceElement(minPrice, maxPrice) {
-//     const priceElement = document.createElement("div");
-//     priceElement.classList.add("price-element");
-//     priceElement.innerHTML = `Min Price: ${minPrice} ₾, Max Price: ${maxPrice} ₾`;
-//     priceDisplay.appendChild(priceElement);
-//   }
+  function createPriceElement(minPrice, maxPrice) {
+    const priceElement = document.createElement("div");
+    priceElement.classList.add("price-element");
+    priceElement.innerHTML = `Min Price: ${minPrice} ₾, Max Price: ${maxPrice} ₾`;
+    priceDisplay.appendChild(priceElement);
+  }
 
-//   form.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const minPrice = minPriceInput.value;
-//     const maxPrice = maxPriceInput.value;
-//     if (minPrice && maxPrice) {
-//       createPriceElement(minPrice, maxPrice);
-//     }
-//   });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const minPrice = minPriceInput.value;
+    const maxPrice = maxPriceInput.value;
+    if (minPrice && maxPrice) {
+      createPriceElement(minPrice, maxPrice);
+    }
+  });
 
-//   priceOptions.forEach((option) => {
-//     option.addEventListener("click", (e) => {
-//       const priceValue = e.target.textContent.trim().split(" ")[0];
-//       if (
-//         e.target.parentElement.previousElementSibling.textContent.includes(
-//           "მინ"
-//         )
-//       ) {
-//         minPriceInput.value = priceValue;
-//       } else {
-//         maxPriceInput.value = priceValue;
-//       }
-//     });
-//   });
-// });
+  priceOptions.forEach((option) => {
+    option.addEventListener("click", (e) => {
+      const priceValue = e.target.textContent.trim().split(" ")[0];
+      if (
+        e.target.parentElement.previousElementSibling.textContent.includes(
+          "მინ"
+        )
+      ) {
+        minPriceInput.value = priceValue;
+      } else {
+        maxPriceInput.value = priceValue;
+      }
+    });
+  });
+});
